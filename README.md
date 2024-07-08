@@ -47,7 +47,7 @@ git clone https://github.com/jswebguru/mask-rcnn.pytorch.git
 
 ### Requirements
 
-Tested under python3.
+Tested under python3.x
 
 - python packages
   - pytorch>=0.3.1
