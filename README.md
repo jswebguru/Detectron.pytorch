@@ -1,8 +1,6 @@
-**Use this instead: https://github.com/facebookresearch/maskrcnn-benchmark**
 
 # A Pytorch Implementation of Detectron
 
-[![Build Status](https://travis-ci.com/roytseng-tw/Detectron.pytorch.svg?branch=master)](https://travis-ci.com/roytseng-tw/Detectron.pytorch)
 
 <div align="center">
 
@@ -14,20 +12,16 @@
 
 <p>Corresponding example output from Detectron. </p>
 
-<img src="demo/img1_keypoints-pydetectron-R50-FPN.jpg" width="700px"/>
-
 <p>Example output of <b>e2e_keypoint_rcnn-R-50-FPN_s1x</b> using Detectron pretrained weight.</p>
 
 </div>
 
-**This code follows the implementation architecture of Detectron.** Only part of the functionality is supported. Check [this section](#supported-network-modules) for more information.
+**This code follows the implementation architecture of Detectron.** Only part of the functionality is supported.
 
 With this code, you can...
 
 1. **Train your model from scratch.**
 2. **Inference using the pretrained weight file (*.pkl) from Detectron.**
-
-This repository is originally built on [jwyang/faster-rcnn.pytorch](https://github.com/jwyang/faster-rcnn.pytorch). However, after many modifications, the structure changes a lot and it's now more similar to [Detectron](https://github.com/facebookresearch/Detectron). I deliberately make everything similar or identical to Detectron's implementation, so as to reproduce the result directly from official pretrained weight files.
 
 This implementation has the following features:
 
@@ -43,11 +37,6 @@ This implementation has the following features:
 
   Besides of that, I implement a customized `nn.DataParallel ` module which enables different batch blob size on different gpus. Check [My nn.DataParallel](#my-nndataparallel) section for more details about this.
 
-## News
-
-- (2018/05/25) Support ResNeXt backbones.
-- (2018/05/22) Add group normalization baselines.
-- (2018/05/15) PyTorch0.4 is supported now !
 
 ## Getting Started
 Clone the repo:
@@ -84,10 +73,6 @@ cd lib  # please change to this directory
 sh make.sh
 ```
 
-If your are using Volta GPUs, uncomment this [line](https://github.com/roytseng-tw/mask-rcnn.pytorch/tree/master/lib/make.sh#L15) in `lib/mask.sh` and remember to postpend a backslash at the line above. `CUDA_PATH` defaults to `/usr/loca/cuda`. If you want to use a CUDA library on different path, change this [line](https://github.com/roytseng-tw/mask-rcnn.pytorch/tree/master/lib/make.sh#L3) accordingly.
-
-It will compile all the modules you need, including NMS, ROI_Pooing, ROI_Crop and ROI_Align. (Actually gpu nms is never used ...)
-
 Note that, If you use `CUDA_VISIBLE_DEVICES` to set gpus, **make sure at least one gpu is visible when compile the code.**
 
 ### Data Preparation
@@ -122,7 +107,7 @@ mkdir data
       ├── ...
   ```
   Download coco mini annotations from [here](https://s3-us-west-2.amazonaws.com/detectron/coco/coco_annotations_minival.tgz).
-  Please note that minival is exactly equivalent to the recently defined 2017 val set. Similarly, the union of valminusminival and the 2014 train is exactly equivalent to the 2017 train set.
+  Please note that minimal is exactly equivalent to the recently defined 2017 val set. Similarly, the union of valminusminival and the 2014 train is exactly equivalent to the 2017 train set.
 
    Feel free to put the dataset at any place you want, and then soft link the dataset under the `data/` folder:
 
