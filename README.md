@@ -119,12 +119,10 @@ mkdir data
 
 ### Pretrained Model
 
-I use ImageNet pretrained weights from Caffe for the backbone networks.
+I used ImageNet pretrained weights from Caffe for the backbone networks.
 
 - [ResNet50](https://drive.google.com/open?id=1wHSvusQ1CiEMc5Nx5R8adqoHQjIDWXl1), [ResNet101](https://drive.google.com/open?id=1x2fTMqLrn63EMW0VuK4GEa2eQKzvJ_7l), [ResNet152](https://drive.google.com/open?id=1NSCycOb7pU0KzluH326zmyMFUU55JslF)
-- [VGG16](https://drive.google.com/open?id=19UphT53C0Ua9JAtICnw84PPTa3sZZ_9k)  (vgg backbone is not implemented yet)
 
-Download them and put them into the `{repo_root}/data/pretrained_model`.
 
 You can the following command to download them all:
 
