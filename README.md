@@ -1,5 +1,5 @@
 
-# A Pytorch Implementation of Detectron
+# Pytorch Implementation of Detectron
 
 
 <div align="center">
@@ -42,7 +42,7 @@ This implementation has the following features:
 Clone the repo:
 
 ```
-git clone https://github.com/roytseng-tw/mask-rcnn.pytorch.git
+git clone https://github.com/jswebguru/mask-rcnn.pytorch.git
 ```
 
 ### Requirements
